@@ -4,6 +4,12 @@ std::string convertArabicToRoman(int arabic)
 {
     std::string roman = "";
 
+    if (arabic == 40)
+    {
+        roman += "XL";
+        arabic -= 40;
+    }
+
     for (; arabic >= 10; arabic -= 10)
     {
         roman += "X";

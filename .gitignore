@@ -2,5 +2,6 @@
 *.depend
 *.layout
 *.gch
+*.bak
 bin
 obj

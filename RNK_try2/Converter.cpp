@@ -4,6 +4,12 @@ std::string convertArabicToRoman(int arabic)
 {
     std::string roman = "";
 
+    if (arabic == 9)
+    {
+        roman += "IX";
+        arabic -= 9;
+    }
+
     if (arabic >= 5)
     {
         roman += "V";

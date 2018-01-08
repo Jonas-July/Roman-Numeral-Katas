@@ -4,10 +4,9 @@ std::string convertArabicToRoman(int arabic)
 {
     std::string roman = "";
 
-    while (arabic >= 10)
+    for (; arabic >= 10; arabic -= 10)
     {
         roman += "X";
-        arabic -= 10;
     }
 
     if (arabic == 9)

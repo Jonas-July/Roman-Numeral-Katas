@@ -1,6 +1,7 @@
-
+#include "testRNK.hpp"
 
 int main()
 {
-    return 0;
+    int passing = testRNK();
+    return passing;
 }

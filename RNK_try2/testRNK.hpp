@@ -1,0 +1,6 @@
+#ifndef TESTRNK_HPP_INCLUDED
+#define TESTRNK_HPP_INCLUDED
+
+int testRNK();
+
+#endif // TESTRNK_HPP_INCLUDED

@@ -9,6 +9,7 @@ int testRNK()
     if (convertArabicToRoman(3) != "III") return  3;
     if (convertArabicToRoman(4) != "IV" ) return  4;
     if (convertArabicToRoman(5) != "V"  ) return  5;
+    if (convertArabicToRoman(6) != "VI" ) return  6;
 
     return 0;
 }

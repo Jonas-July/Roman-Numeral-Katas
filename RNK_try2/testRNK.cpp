@@ -35,6 +35,7 @@ int testRNK()
     if (convertArabicToRoman(29) != "XXIX"  ) return 29;
     if (convertArabicToRoman(30) != "XXX"   ) return 30;
     if (convertArabicToRoman(39) != "XXXIX" ) return 39;
+    if (convertArabicToRoman(40) != "XL"    ) return 40;
 
     return 0;
 }

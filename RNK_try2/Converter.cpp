@@ -2,9 +2,10 @@
 
 std::string convertArabicToRoman(int arabic)
 {
-    if (arabic == 1)
+    std::string roman = "";
+    for (int i = 0; i < arabic; i++)
     {
-        return "I";
+        roman += "I";
     }
-    return "";
+    return roman;
 }

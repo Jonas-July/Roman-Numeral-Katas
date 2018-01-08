@@ -3,6 +3,13 @@
 std::string convertArabicToRoman(int arabic)
 {
     std::string roman = "";
+
+    if (arabic == 5)
+    {
+        roman += "V";
+        arabic -= 5;
+    }
+
     if (arabic == 4)
     {
         roman += "IV";
@@ -13,5 +20,6 @@ std::string convertArabicToRoman(int arabic)
     {
         roman += "I";
     }
+
     return roman;
 }

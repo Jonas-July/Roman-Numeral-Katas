@@ -48,6 +48,12 @@ int testRNK()
     if (convertArabicToRoman(400) != "CD"    ) return 400;
     if (convertArabicToRoman(401) != "CDI"   ) return 401;
     if (convertArabicToRoman(900) != "CM"    ) return 900;
+    if (convertArabicToRoman(1000) != "M"    ) return 1000;
+
+//    //S = 5000
+//    if (convertArabicToRoman(4000) != "MS"   ) return 4000;
+//    if (convertArabicToRoman(5000) != "S"    ) return 4000;
+//    if (convertArabicToRoman(20000) != "SSSS") return 4000;
 
     return 0;
 }

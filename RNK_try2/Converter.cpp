@@ -1,59 +1,63 @@
+#include <vector>
+
 #include "Converter.hpp"
-#include <iostream>
 
 std::string convertArabicToRoman(int arabic)
 {
+    std::vector<int>         romanNumeralValues = {500, 100,  50,  10,  5 ,  1 };
+    std::vector<std::string> romanNumerals      = {"D", "C", "L", "X", "V", "I"};
+
     std::string roman = "";
 
-    for (; arabic >= 500 - 100; arabic -= 500)
+    for (; arabic >= romanNumeralValues[0] - romanNumeralValues[1]; arabic -= romanNumeralValues[0])
     {
-        for (; arabic < 500; arabic += 100)
+        for (; arabic < romanNumeralValues[0]; arabic += romanNumeralValues[1])
         {
-            roman += "C";
+            roman += romanNumerals[1];
         }
 
-        roman += "D";
+        roman += romanNumerals[0];
     }
 
 
-    for (; arabic >= 100 - 10; arabic -= 100)
+    for (; arabic >= romanNumeralValues[1] - romanNumeralValues[3]; arabic -= romanNumeralValues[1])
     {
-        for (; arabic < 100; arabic += 10)
+        for (; arabic < romanNumeralValues[1]; arabic += romanNumeralValues[3])
         {
-            roman += "X";
+            roman += romanNumerals[3];
         }
 
-        roman += "C";
+        roman += romanNumerals[1];
     }
 
-    for (; arabic >= 50 - 10; arabic -= 50)
+    for (; arabic >= romanNumeralValues[2] - romanNumeralValues[3]; arabic -= romanNumeralValues[2])
     {
-        for (; arabic < 50; arabic += 10)
+        for (; arabic < romanNumeralValues[2]; arabic += romanNumeralValues[3])
         {
-            roman += "X";
+            roman += romanNumerals[3];
         }
 
-        roman += "L";
+        roman += romanNumerals[2];
     }
 
-    for (; arabic >= 10 - 1; arabic -= 10)
+    for (; arabic >= romanNumeralValues[3] - romanNumeralValues[5]; arabic -= romanNumeralValues[3])
     {
-        for (; arabic < 10; arabic += 1)
+        for (; arabic < romanNumeralValues[3]; arabic += romanNumeralValues[5])
         {
-            roman += "I";
+            roman += romanNumerals[5];
         }
 
-        roman += "X";
+        roman += romanNumerals[3];
     }
 
-    for (; arabic >= 5 - 1; arabic -= 5)
+    for (; arabic >= romanNumeralValues[4] - romanNumeralValues[5]; arabic -= romanNumeralValues[4])
     {
-        for (; arabic < 5; arabic += 1)
+        for (; arabic < romanNumeralValues[4]; arabic += romanNumeralValues[5])
         {
-            roman += "I";
+            roman += romanNumerals[5];
         }
 
-        roman += "V";
+        roman += romanNumerals[4];
     }
 
     for (; arabic >= 1; arabic -= 1)

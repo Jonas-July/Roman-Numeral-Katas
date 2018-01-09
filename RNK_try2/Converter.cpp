@@ -19,7 +19,6 @@ std::string convertArabicToRoman(int arabic)
         roman += "L";
     }
 
-
     for (; arabic >= 9; arabic -= 10)
     {
         for (; arabic < 10; arabic += 1)

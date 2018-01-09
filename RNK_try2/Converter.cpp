@@ -9,34 +9,35 @@ std::string convertArabicToRoman(int arabic)
         roman += "XC";
     }
 
-    for (; arabic >= 50; arabic -= 50)
+    for (; arabic >= 40; arabic -= 50)
     {
+        for (; arabic < 50; arabic += 10)
+        {
+            roman += "X";
+        }
+
         roman += "L";
     }
 
-    for (; arabic >= 40; arabic -= 40)
-    {
-        roman += "XL";
-    }
 
-    for (; arabic >= 10; arabic -= 10)
+    for (; arabic >= 9; arabic -= 10)
     {
+        for (; arabic < 10; arabic += 1)
+        {
+            roman += "I";
+        }
+
         roman += "X";
     }
 
-    for (; arabic == 9; arabic -= 9)
+    for (; arabic >= 4; arabic -= 5)
     {
-        roman += "IX";
-    }
+        for (; arabic < 5; arabic += 1)
+        {
+            roman += "I";
+        }
 
-    for (; arabic >= 5; arabic -= 5)
-    {
         roman += "V";
-    }
-
-    for (; arabic == 4; arabic -= 4)
-    {
-        roman += "IV";
     }
 
     for (; arabic >= 1; arabic -= 1)

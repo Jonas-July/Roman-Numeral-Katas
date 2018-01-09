@@ -4,9 +4,14 @@ std::string convertArabicToRoman(int arabic)
 {
     std::string roman = "";
 
-    for (; arabic >= 90; arabic -= 90)
+    for (; arabic >= 90; arabic -= 100)
     {
-        roman += "XC";
+        for (; arabic < 100; arabic += 10)
+        {
+            roman += "X";
+        }
+
+        roman += "C";
     }
 
     for (; arabic >= 40; arabic -= 50)

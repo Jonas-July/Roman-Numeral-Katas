@@ -12,11 +12,13 @@ std::string convertArabicToRoman(int arabic)
 
     for (uint16_t i = 0; i < romanNumerals.size(); i++)
     {
-        for (; arabic >= romanNumeralValues[i] - romanNumeralValues[i + 1 + (i + romanNumerals.size()) % 2]; arabic -= romanNumeralValues[i])
+        int nextReductionNumeralIndex = i + 1 + (i + romanNumerals.size()) % 2;
+
+        for (; arabic >= romanNumeralValues[i] - romanNumeralValues[nextReductionNumeralIndex]; arabic -= romanNumeralValues[i])
         {
-            for (; arabic < romanNumeralValues[i]; arabic += romanNumeralValues[i + 1 + (i + romanNumerals.size()) % 2])
+            for (; arabic < romanNumeralValues[i]; arabic += romanNumeralValues[nextReductionNumeralIndex])
             {
-                roman += romanNumerals[i + 1 + (i + romanNumerals.size()) % 2];
+                roman += romanNumerals[nextReductionNumeralIndex];
             }
 
             roman += romanNumerals[i];
